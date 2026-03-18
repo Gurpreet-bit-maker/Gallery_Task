@@ -8,7 +8,7 @@ import React, {
 import useFetchPhotos from "../hooks/Fetchphotos";
 // searching
 const Search = React.memo(({ search, onChange }) => {
-  console.log("Search component render");
+
   return (
     <div className="mb-4 flex justify-center">
       <input
@@ -68,6 +68,7 @@ function Gallery() {
       photo.author.toLowerCase().includes(search.toLowerCase()),
     );
   }, [state, search]);
+  console.log(state);
 
   // loader
   if (loading || state.length === 0)
